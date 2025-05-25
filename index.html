@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CS Student Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full bg-slate-900/90 backdrop-blur-sm z-50 border-b border-slate-800 animate-fade-up"
+    >
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center max-w-6xl"
+      >
+        <!-- Logo -->
+        <div class="flex items-center">
+          <div class="text-2xl font-bold code-font">
+            <span class="text-blue-500">&lt;</span>
+            <span class="gradient-text">Vando.Dev</span>
+            <span class="text-purple-500">/&gt;</span>
+          </div>
+        </div>
+        <!-- Desktop Nav Links -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a class="nav-link text-slate-300 hover:text-white" href="#home"
+            >Home</a
+          >
+          <a class="nav-link text-slate-300 hover:text-white" href="#about"
+            >About</a
+          >
+          <a class="nav-link text-slate-300 hover:text-white" href="#projects"
+            >Projects</a
+          >
+          <a class="nav-link text-slate-300 hover:text-white" href="#skills"
+            >Skills</a
+          >
+          <a class="nav-link text-slate-300 hover:text-white" href="#contact"
+            >Contact</a
+          >
+          <!-- Resume Button -->
+          <a
+            class="ml-4 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 rounded-lg transition"
+            download=""
+            href="/assets/VandoUngResume.pdf"
+          >
+            Download Resume
+          </a>
+        </div>
+        <!-- Mobile Hamburger Icon -->
+        <div class="md:hidden">
+          <button class="text-white" id="menu-toggle">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        class="hidden md:hidden bg-slate-900 border-b border-slate-800"
+        id="mobile-menu"
+      >
+        <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+          <a class="text-slate-300 hover:text-white" href="#home">Home</a>
+          <a class="text-slate-300 hover:text-white" href="#about">About</a>
+          <a class="text-slate-300 hover:text-white" href="#projects"
+            >Projects</a
+          >
+          <a class="text-slate-300 hover:text-white" href="#skills">Skills</a>
+          <a class="text-slate-300 hover:text-white" href="#contact">Contact</a>
+          <a
+            class="text-blue-400 hover:text-blue-300"
+            download=""
+            href="/assets/VandoUngResume.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden">
+      <canvas id="hero-bg-effect" class="absolute top-0 left-0 w-full h-full z-0 pointer-events-none"></canvas>
+      <div id="star-field" class="absolute top-0 left-0 w-full h-full z-0 pointer-events-none overflow-hidden"></div>
+      <section class="min-h-screen flex items-center pt-16" id="home">
+        <div class="container mx-auto px-4 py-16 max-w-6xl mx-auto">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+              <div
+                class="flex flex-col md:flex-row items-center md:items-start mb-8"
+              >
+                <div class="profile-img w-40 h-40 mb-6 md:mb-0 md:mr-8 relative">
+                  <div class="profile-img-border"></div>
+                  <img src="/assets/img/profile.png" alt="profile">
+
+                  <!-- Orbiting Orbs -->
+                  <div class="orbiter absolute inset-0 animate-orbit">
+                    <div class="w-2.5 h-2.5 bg-purple-500 rounded-full absolute top-0 left-1/2 -translate-x-1/2"></div>
+                  </div>
+                  <div class="orbiter absolute inset-0 animate-orbit-reverse">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full absolute bottom-0 right-1/2 translate-x-1/2"></div>
+                  </div>
+                </div>
+                <div>
+                  <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    <span class="block">Hi, I'm</span>
+                    <span id="typing-name" class="gradient-text whitespace-nowrap overflow-hidden leading-[1.2] pb-1"></span><span class="cursor blink">|</span>
+                  </h1>
+                  <h2 class="text-2xl md:text-3xl text-slate-400 mb-6">
+                    Computer Science Student
+                  </h2>
+                </div>
+              </div>
+              <p class="text-lg text-slate-300 mb-8">
+                I enjoy developing software, learning about new technology, and discovering new ideas.
+              </p>
+              <div class="flex space-x-4">
+                <a
+                  class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition"
+                  href="#contact"
+                >
+                  Get In Touch
+                </a>
+                <a
+                  class="px-6 py-3 border border-slate-600 text-white font-medium rounded-lg hover:bg-slate-800 transition"
+                  href="#projects"
+                >
+                  View Projects
+                </a>
+              </div>
+            </div>
+            <!-- bash portfolio -->
+            <div class="md:w-1/2 flex justify-center">
+              <div class="tilt-container transition-transform duration-300 ease-out">
+                <div class="terminal w-full max-w-lg relative">
+                  <div class="terminal-header">
+                    <div class="terminal-circle bg-red-500"></div>
+                    <div class="terminal-circle bg-yellow-500"></div>
+                    <div class="terminal-circle bg-green-500"></div>
+                    <div class="ml-4 text-sm text-slate-400">bash ~ portfolio</div>
+                  </div>
+                  <div class="terminal-body" id="terminal-output">
+                    <div class="text-green-500">
+                      $ <span class="text-blue-400">whoami</span>
+                    </div>
+                    <div class="text-slate-300 mb-2">vando.ung</div>
+                    <div class="text-green-500">
+                      $ <span class="text-blue-400">cat</span>
+                      <span class="text-purple-400">about.txt</span>
+                    </div>
+                    <div class="text-slate-300 mb-2">
+                      Computer Science student passionate about coding, technology, and solving challenging problems through software.
+                    </div>
+                    <div class="text-green-500">
+                      $ <span class="text-blue-400">ls</span>
+                      <span class="text-purple-400">skills/</span>
+                    </div>
+                    <div class="text-yellow-300 mb-2">
+                      Python Java JavaScript HTML CSS PostgreSQL SQLite
+                    </div>
+                    <div class="text-green-500">
+                      $ <span class="text-blue-400">git</span>
+                      <span class="text-slate-300">status</span>
+                    </div>
+                    <div class="text-slate-300">
+                      Actively looking to collaborate on exciting and innovative projects!
+                    </div>
+                    <div class="text-green-500 mt-2">
+                      $ <span class="cursor"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- About Section -->
+    <section class="py-20 bg-slate-900" id="about">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="section-fade">
+          <h2 class="text-3xl font-bold mb-2">
+            About <span class="gradient-text">Me</span>
+          </h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mb-8"
+          ></div>
+          <div class="flex flex-col">
+            <div class="flex items-center mb-6">
+              <div class="profile-img w-24 h-24 mr-6 relative hidden md:block">
+                <div class="profile-img-border"></div>
+                <img src="/assets/img/profile.png" alt="profile">
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Vando Ung</h3>
+                <p class="text-slate-400">Computer Science Student</p>
+              </div>
+            </div>
+            <div class="text-slate-300 space-y-5 text-lg leading-relaxed">
+              <p>
+                I'm a Computer Science student who loves coding and discovering new technology. 
+                I've worked on various projects involving software development, database management, and algorithm design, 
+                which taught me to think critically and solve problems effectively. 
+                I enjoy tackling challenges, exploring new ideas, and constantly improving my skills. 
+                My goal is to become a developer who creates and innovates new technology that can positively change the world.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-6 mt-10">
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center mr-3"
+                >
+                  <i class="fas fa-graduation-cap text-blue-400"></i>
+                </div>
+                <div>
+                  <h3 class="font-medium">Education</h3>
+                  <p class="text-sm text-slate-400">(Studying) Computer Science</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 rounded-full bg-purple-900/50 flex items-center justify-center mr-3"
+                >
+                  <i class="fas fa-code text-purple-400"></i>
+                </div>
+                <div>
+                  <h3 class="font-medium">Focus</h3>
+                  <p class="text-sm text-slate-400">AI/ML Engineering</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 rounded-full bg-indigo-900/50 flex items-center justify-center mr-3"
+                >
+                  <i class="fas fa-laptop-code text-indigo-400"></i>
+                </div>
+                <div>
+                  <h3 class="font-medium">Interests</h3>
+                  <p class="text-sm text-slate-400">Cooding, AI, Technology, Inovation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Section -->
+    <section class="py-20 bg-slate-800/50" id="projects">
+      <div class="container mx-auto px-4 max-w-6xl mx-auto">
+        <div class="section-fade">
+          <h2 class="text-3xl font-bold mb-2">
+            My <span class="gradient-text">Projects</span>
+          </h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mb-8"
+          ></div>
+          <p class="text-slate-300 mb-10 max-w-2xl">
+            While I'm still early in my journey, here are some projects I've
+            built during my coursework and personal learning. Each represents a
+            step in my development as a programmer.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div
+              class="project-card bg-slate-800 rounded-lg overflow-hidden border border-slate-700"
+            >
+              <div
+                class="h-48 bg-gradient-to-br from-blue-900 to-purple-900 flex items-center justify-center"
+              >
+                <i class="fas fa-tasks text-5xl text-blue-300"></i>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Food Delivery App</h3>
+                <p class="text-slate-400 mb-4">
+                  Computer Science School Project build decision Making App
+                  <ul class="text-slate-400 list-disc list-inside space-y-1">
+                    <li>Designed the app UI</li>
+                    <li>Planned algorithm and wrote code using code.org IDE</li>
+                    <li>Debugged the code and improved the app</li>
+                  </ul>
+                </p>
+                <p class="text-slate-400 mb-4"> </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-xs"
+                    >Code.org</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-xs"
+                    >UI Design</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-xs"
+                    >JavaScript</span
+                  >
+                </div>
+                <div class="flex space-x-3">
+                  <a
+                    class="text-blue-400 hover:text-blue-300 flex items-center"
+                    href="https://github.com/Ungvando/Decision-Maker-App-Food-Delivery-App"
+                  >
+                    <i class="fab fa-github mr-1"></i> Code
+                  </a>
+                  <a
+                    class="text-purple-400 hover:text-purple-300 flex items-center"
+                    href="https://studio.code.org/projects/applab/0MEUHj_RivPXrX1Sro2ZPR5GwO0V8WA9XBQsba1Kblk"
+                  >
+                    <i class="fas fa-external-link-alt mr-1"></i> Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Project 2 -->
+            <div
+              class="project-card bg-slate-800 rounded-lg overflow-hidden border border-slate-700"
+            >
+              <div
+                class="h-48 bg-gradient-to-br from-indigo-900 to-purple-900 flex items-center justify-center"
+              >
+                <i class="fas fa-calculator text-5xl text-indigo-300"></i>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  Hotel Booking App
+                </h3>
+                <p class="text-slate-400 mb-4">
+                  Computer Science School Project build decision Making App
+                  <ul class="text-slate-400 list-disc list-inside space-y-1">
+                    <li>Design UI and data used in the app</li>
+                    <li>Prepare an algorithm and data for code</li>
+                    <li>Code and debug the app</li>
+                  </ul>
+                </p>
+                <p class="text-slate-400 mb-4"></p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-xs"
+                    >Code.org</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-xs"
+                    >UI Design</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-xs"
+                    >JavaScript</span
+                  >
+                </div>
+                <div class="flex space-x-3">
+                  <a
+                    class="text-blue-400 hover:text-blue-300 flex items-center"
+                    href="https://github.com/Ungvando/Hackathon-Project-Hotel-Booking-App"
+                  >
+                    <i class="fab fa-github mr-1"></i> Code
+                  </a>
+                  <a
+                    class="text-purple-400 hover:text-purple-300 flex items-center"
+                    href="https://studio.code.org/projects/applab/NOc0Hyk__2cNgd1iIkBUhN-to19lp_j5dl0Xtm33KwU"
+                  >
+                    <i class="fas fa-external-link-alt mr-1"></i> Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Project 3 -->
+            <div
+              class="project-card bg-slate-800 rounded-lg overflow-hidden border border-slate-700"
+            >
+              <div
+                class="h-48 bg-gradient-to-br from-purple-900 to-pink-900 flex items-center justify-center"
+              >
+                <i class="fas fa-book text-5xl text-purple-300"></i>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  UrPOS System
+                </h3>
+                <p class="text-slate-400 mb-4">
+                  Personal python GUI project for restaurant and retail store
+                  <ul class="text-slate-400 list-disc list-inside space-y-1">
+                    <li>Design the UX/UI of the software</li>
+                    <li>Design the database and algorithm used</li>
+                    <li>Coding and Debugging the app</li>
+                  </ul>
+                </p>
+                <p class="text-slate-400 mb-4"></p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-xs"
+                    >Python</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-xs"
+                    >Tkinter</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-xs"
+                    >Database</span
+                  >
+                </div>
+                <div class="flex space-x-3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-slate-900" id="skills">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="section-fade">
+          <h2 class="text-3xl font-bold mb-2">
+            My <span class="gradient-text">Skills</span>
+          </h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mb-8"
+          ></div>
+          <!-- cube effect -->
+          <div class="cube-wrapper mx-auto my-20">
+            <div class="cube-scene w-64 h-64 mx-auto perspective">
+              <div class="cube auto-rotate-cube">
+                <div class="face front flex flex-col items-center justify-center">
+                  <i class="fab fa-python text-3xl mb-2"></i>
+                  <span>Python</span>
+                </div>
+
+                <div class="face back flex flex-col items-center justify-center">
+                  <i class="fab fa-java text-3xl mb-2"></i>
+                  <span>Java</span>
+                </div>
+
+                <div class="face right flex flex-col items-center justify-center">
+                  <i class="fab fa-js-square text-3xl mb-2"></i>
+                  <span>JavaScript</span>
+                </div>
+
+                <div class="face left flex flex-col items-center justify-center">
+                  <i class="fas fa-database text-3xl mb-2"></i>
+                  <span>SQL</span>
+                </div>
+
+                <div class="face top flex flex-col items-center justify-center">
+                  <i class="fab fa-html5 text-3xl text-orange-400 mb-1"></i>
+                  <i class="fab fa-css3-alt text-3xl text-blue-400"></i>
+                  <span class="mt-1">HTML/CSS</span>
+                </div>
+
+                <div class="face bottom flex flex-col items-center justify-center">
+                  <i class="fab fa-git-alt text-3xl text-red-400 mb-2"></i>
+                  <span>Git</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Left Side -->
+            <div>
+              <h3 class="text-xl font-semibold mb-6">Technical Skills</h3>
+              <div class="flex flex-wrap gap-3 mb-8">
+                <span
+                  class="skill-pill px-4 py-2 bg-blue-900/40 text-blue-400 rounded-lg border border-blue-800"
+                  ><i class="fab fa-python mr-2"></i>Python</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-blue-900/40 text-blue-400 rounded-lg border border-blue-800"
+                  ><i class="fab fa-java mr-2"></i>Java</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-blue-900/40 text-blue-400 rounded-lg border border-blue-800"
+                  ><i class="fab fa-js-square mr-2"></i>JavaScript</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-blue-900/40 text-blue-400 rounded-lg border border-blue-800"
+                  ><i class="fab fa-html5 mr-2"></i>HTML</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-blue-900/40 text-blue-400 rounded-lg border border-blue-800"
+                  ><i class="fab fa-css3-alt mr-2"></i>CSS</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-blue-900/40 text-blue-400 rounded-lg border border-blue-800"
+                  ><i class="fas fa-database mr-2"></i>SQL (PostgreSQL, SQLite)</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-blue-900/40 text-blue-400 rounded-lg border border-blue-800"
+                  ><i class="fab fa-git-alt mr-2"></i>Git</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-blue-900/40 text-blue-400 rounded-lg border border-blue-800"
+                  ><i class="fas fa-network-wired mr-2"></i>Database Management</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-blue-900/40 text-blue-400 rounded-lg border border-blue-800"
+                  ><i class="fas fa-cogs mr-2"></i>Prompt Engineering</span
+                >
+              </div>
+              <h3 class="text-xl font-semibold mb-6">Soft Skills</h3>
+              <div class="flex flex-wrap gap-3">
+                <span
+                  class="skill-pill px-4 py-2 bg-purple-900/40 text-purple-400 rounded-lg border border-purple-800"
+                  >Problem Solving</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-purple-900/40 text-purple-400 rounded-lg border border-purple-800"
+                  >Critical Thinking</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-purple-900/40 text-purple-400 rounded-lg border border-purple-800"
+                  >Leadership</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-purple-900/40 text-purple-400 rounded-lg border border-purple-800"
+                  >Time Management</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-purple-900/40 text-purple-400 rounded-lg border border-purple-800"
+                  >Fast Learner</span
+                >
+                <span
+                  class="skill-pill px-4 py-2 bg-purple-900/40 text-purple-400 rounded-lg border border-purple-800"
+                  >Adaptability</span
+                >
+              </div>
+            </div>
+            <!-- Right Side -->
+            <div class="space-y-10">
+              <!-- Tools -->
+              <div>
+                <h3 class="text-xl font-semibold mb-6">
+                  Tools &amp; Technologies
+                </h3>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="flex items-center">
+                    <i class="fas fa-code text-blue-400 text-xl mr-3"></i>
+                    <span class="text-slate-300">VS Code</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fab fa-github text-blue-400 text-xl mr-3"></i>
+                    <span class="text-slate-300">GitHub</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-terminal text-blue-400 text-xl mr-3"></i>
+                    <span class="text-slate-300">Linux / Bash</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Language Skills -->
+              <div>
+                <h3 class="text-xl font-semibold mb-6">Language Skills</h3>
+                <div class="space-y-4 text-slate-300">
+                  <div class="flex items-start gap-3">
+                    <span class="text-2xl">🇹🇭</span>
+                    <div>
+                      <h4 class="font-semibold">Thai — 10/10</h4>
+                      <p class="text-sm text-slate-400">
+                        Fluent in speaking, reading, and writing
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="text-2xl">🇺🇸</span>
+                    <div>
+                      <h4 class="font-semibold">English — 10/10</h4>
+                      <p class="text-sm text-slate-400">
+                        Fluent in speaking, reading, and writing
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <span class="text-2xl">🇰🇭</span>
+                    <div>
+                      <h4 class="font-semibold">Khmer — 5/10</h4>
+                      <p class="text-sm text-slate-400">
+                        Can listen and speak at a basic level
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End right section -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="py-20 bg-slate-800/50" id="contact">
+      <div class="container mx-auto px-4 max-w-6xl mx-auto">
+        <div class="section-fade">
+          <h2 class="text-3xl font-bold mb-2">
+            Get In <span class="gradient-text">Touch</span>
+          </h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mb-8"
+          ></div>
+          <div class="flex flex-col md:flex-row gap-10">
+            <div class="md:w-1/2">
+              <div class="flex items-center mb-6">
+                <div class="profile-img w-16 h-16 mr-4 relative">
+                  <div class="profile-img-border"></div>
+                  <img src="/assets/img/profile.png" alt="profile">
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold">Vando Ung</h3>
+                  <p class="text-slate-400">Open to new opportunities</p>
+                </div>
+              </div>
+              <p class="text-slate-300 mb-6">
+                I'm currently seeking internship opportunities and team projects where I can grow my skills, 
+                contribute ideas, and gain real-world experience. 
+                Feel free to reach out if you'd like to collaborate or connect!
+              </p>
+              <div class="space-y-4 mb-8">
+                <div class="flex items-center">
+                  <div
+                    class="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center mr-3"
+                  >
+                    <i class="fas fa-envelope text-blue-400"></i>
+                  </div>
+                  <span class="text-slate-300">ungvando2007@gmail.com</span>
+                </div>
+                <div class="flex items-center">
+                  <div
+                    class="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center mr-3"
+                  >
+                    <i class="fas fa-phone text-blue-400"></i>
+                  </div>
+                  <span class="text-slate-300">(562) 675-4386</span>
+                </div>
+                <div class="flex items-center">
+                  <div
+                    class="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center mr-3"
+                  >
+                    <i class="fas fa-map-marker-alt text-blue-400"></i>
+                  </div>
+                  <span class="text-slate-300">Long Beach, CA</span>
+                </div>
+              </div>
+              <div class="flex space-x-4">
+                <a
+                  class="w-10 h-10 rounded-full bg-slate-700 hover:bg-blue-800 flex items-center justify-center transition"
+                  href="#"
+                >
+                  <i class="fab fa-linkedin-in text-white"></i>
+                </a>
+                <a
+                  class="w-10 h-10 rounded-full bg-slate-700 hover:bg-gray-800 flex items-center justify-center transition"
+                  href="https://github.com/Ungvando/"
+                >
+                  <i class="fab fa-github text-white"></i>
+                </a>
+              </div>
+            </div>
+            <div class="md:w-1/2">
+              <form class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+                <h3 class="text-xl font-semibold mb-4">Send Me a Message</h3>
+                <div class="mb-4">
+                  <label class="block text-slate-300 mb-2" for="name"
+                    >Name</label
+                  >
+                  <input
+                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-blue-500"
+                    id="name"
+                    type="text"
+                  />
+                </div>
+                <div class="mb-4">
+                  <label class="block text-slate-300 mb-2" for="email"
+                    >Email</label
+                  >
+                  <input
+                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-blue-500"
+                    id="email"
+                    type="email"
+                  />
+                </div>
+                <div class="mb-4">
+                  <label class="block text-slate-300 mb-2" for="subject"
+                    >Subject</label
+                  >
+                  <input
+                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-blue-500"
+                    id="subject"
+                    type="text"
+                  />
+                </div>
+                <div class="mb-4">
+                  <label class="block text-slate-300 mb-2" for="message"
+                    >Message</label
+                  >
+                  <textarea
+                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-blue-500"
+                    id="message"
+                    rows="4"
+                  ></textarea>
+                </div>
+                <button
+                  class="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:opacity-90 transition"
+                  id="send-message"
+                  type="button"
+                >
+                  Send Message
+                </button>
+                <p class="text-center text-sm text-slate-400 mt-4">
+                  This is a demo form for display purposes only.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-8">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div
+          class="flex flex-col md:flex-row md:justify-between md:items-center space-y-6 md:space-y-0"
+        >
+          <!-- Logo Section -->
+          <div class="flex items-center">
+            <div class="profile-img w-10 h-10 mr-3 relative">
+              <img src="/assets/img/profile.png" alt="profile">
+            </div>
+            <div class="text-xl font-bold code-font">
+              <span class="text-blue-500">&lt;</span>
+              <span class="gradient-text">Vando.Dev</span>
+              <span class="text-purple-500">/&gt;</span>
+            </div>
+          </div>
+          <!-- Copyright -->
+          <div class="text-slate-400 text-sm text-center md:text-left">
+            © 2025 Vando Ung. All rights reserved.
+          </div>
+          <!-- Back to Top -->
+          <div class="text-center md:text-right">
+            <a class="text-slate-400 hover:text-white text-sm" href="#home">
+              <i class="fas fa-arrow-up mr-1"></i>Back to top
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        // Mobile menu toggle
+        const menuToggle = document.getElementById("menu-toggle");
+        if (menuToggle) {
+          menuToggle.addEventListener("click", function () {
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (mobileMenu) mobileMenu.classList.toggle("hidden");
+          });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: "smooth",
+              });
+
+              const mobileMenu = document.getElementById("mobile-menu");
+              if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+                mobileMenu.classList.add("hidden");
+              }
+            }
+          });
+        });
+
+        // Section fade-in animation
+        const sectionObserverOptions = { threshold: 0.1 };
+        const sectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, sectionObserverOptions);
+
+        document.querySelectorAll(".section-fade").forEach((section) => {
+          sectionObserver.observe(section);
+        });
+
+        // Animate Hero on load
+        window.addEventListener("DOMContentLoaded", () => {
+          document.querySelector("#home h1")?.classList.add("animate-fade-up");
+          document
+            .querySelector("#home h2")
+            ?.classList.add("animate-fade-up", "delay-100");
+          document
+            .querySelector("#home p")
+            ?.classList.add("animate-fade-up", "delay-200");
+          document
+            .querySelector("#home .flex")
+            ?.classList.add("animate-fade-up", "delay-300");
+        });
+
+        // Form submission demo
+        const sendBtn = document.getElementById("send-message");
+        if (sendBtn) {
+          sendBtn.addEventListener("click", function () {
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const subject = document.getElementById("subject").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (name && email && subject && message) {
+              alert(
+                "Thank you for your message! This is a demo form, so no message was actually sent."
+              );
+              document.getElementById("name").value = "";
+              document.getElementById("email").value = "";
+              document.getElementById("subject").value = "";
+              document.getElementById("message").value = "";
+            } else {
+              alert("Please fill in all fields.");
+            }
+          });
+        }
+      })();
+      
+      //name loop hero section
+      const text = "Vando Ung";
+      const element = document.getElementById("typing-name");
+
+      let i = 0;
+      let isDeleting = false;
+
+      function typeEffect() {
+        element.textContent = text.substring(0, i);
+
+        if (!isDeleting) {
+          if (i < text.length) {
+            i++;
+            setTimeout(typeEffect, 120); // typing speed
+          } else {
+            isDeleting = true;
+            setTimeout(typeEffect, 1200); // pause after full text
+          }
+        } else {
+          if (i > 0) {
+            i--;
+            setTimeout(typeEffect, 60); // deleting speed
+          } else {
+            isDeleting = false;
+            setTimeout(typeEffect, 500); // pause before typing again
+          }
+        }
+      }
+
+      typeEffect();
+
+      // hero effect
+      const canvas = document.getElementById("hero-bg-effect");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let meteors = [];
+
+      for (let i = 0; i < 120; i++) { // ⬅️ doubled meteors
+        meteors.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          length: Math.random() * 40 + 20, // ⬅️ longer trails
+          speed: Math.random() * 4 + 2,
+          angle: Math.PI / 4,
+          alpha: Math.random() * 0.5 + 0.5,
+          width: Math.random() < 0.3 ? 2 : 1 // ⬅️ thicker for 30%
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        meteors.forEach((m) => {
+          const x = m.x;
+          const y = m.y;
+          const xEnd = x - m.length * Math.cos(m.angle);
+          const yEnd = y - m.length * Math.sin(m.angle);
+
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.lineTo(xEnd, yEnd);
+          ctx.strokeStyle = `rgba(168, 85, 247, ${m.alpha})`; // ⬅️ bright purple glow
+          ctx.lineWidth = m.width;
+          ctx.shadowColor = "rgba(168, 85, 247, 0.5)";
+          ctx.shadowBlur = 4;
+          ctx.stroke();
+        });
+      }
+
+      function update() {
+        meteors.forEach((m) => {
+          m.x -= m.speed * Math.cos(m.angle);
+          m.y -= m.speed * Math.sin(m.angle);
+
+          if (m.x < 0 || m.y > canvas.height) {
+            m.x = Math.random() * canvas.width;
+            m.y = 0;
+          }
+        });
+      }
+
+      function animate() {
+        draw();
+        update();
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+
+      function createStarField() {
+      
+      const container = document.getElementById("star-field");
+      const starCount = 80;
+
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement("div");
+        const size = Math.random() * 3 + 1;
+        const left = Math.random() * 100;
+        const delay = Math.random() * 10;
+        const duration = Math.random() * 10 + 6;
+
+        star.classList.add("star");
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${left}vw`;
+        star.style.bottom = `-${Math.random() * 100}px`;
+        star.style.animationDuration = `${duration}s`;
+        star.style.animationDelay = `-${delay}s`;
+
+        container.appendChild(star);
+      }
+    }
+
+    createStarField();
+
+
+      // bash portfolio effect
+      const tiltContainer = document.querySelector('.tilt-container');
+      const terminal = tiltContainer.querySelector('.terminal');
+
+      window.addEventListener('mousemove', (e) => {
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+
+        const offsetX = e.clientX - centerX;
+        const offsetY = e.clientY - centerY;
+
+        const rotateY = (offsetX / centerX) * 8; // max 8 deg
+        const rotateX = -(offsetY / centerY) * 8;
+
+        terminal.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      window.addEventListener('mouseleave', () => {
+        terminal.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      });
+
+      // skill effect
+      document.querySelectorAll(".skill-pill").forEach((el, i) => {
+        el.style.animationDelay = `${i * 100}ms`;
+      });
+    </script>
+  </body>
+</html>
